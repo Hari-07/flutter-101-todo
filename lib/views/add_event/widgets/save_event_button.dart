@@ -17,9 +17,9 @@ class SaveEventFAB extends StatelessWidget {
       backgroundColor: Colors.black,
       onPressed: () {
         if(eventLabel.isNotEmpty){
+          AppData.addEvent(Event(data: eventLabel));
           Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const EventListPage()));
-          globalEventList.add(Event(data: eventLabel));
         }
       },
       child: const Icon(

@@ -38,7 +38,7 @@ class _EventListPageState extends State<EventListPage> {
               ),
               Expanded(
                 child: EventCardsList(
-                  eventList: globalEventList,
+                  eventList: AppData.getEvents(),
                 ),
               ),
             ],
