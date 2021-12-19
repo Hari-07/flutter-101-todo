@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_101_todo/models/event.dart';
+import 'package:flutter_101_todo/views/homepage/widgets/event_card.dart';
 
 class EventListPage extends StatelessWidget {
   const EventListPage({Key? key}) : super(key: key);
@@ -12,7 +14,7 @@ class EventListPage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 50,
+                height: 100,
               ),
               const Text(
                 'TODO LIST',
@@ -21,14 +23,22 @@ class EventListPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(
+                height: 50,
+              ),
               Expanded(
                 child: ListView(
                   children: [
-                    Container(
-                      child: Text('Event 1'),
+                    EventCard(
+                      event: Event(
+                        data: 'Event 1'
+                      ),
                     ),
-                    Container(
-                      child: Text('Event 2'),
+                    const SizedBox(height: 10,),
+                    EventCard(
+                      event: Event(
+                        data: 'Event 2'
+                      ),
                     ),
                   ],
                 ),
