@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_101_todo/views/homepage/widgets/event_cards_list.dart';
 
+import 'widgets/add_event_button.dart';
+
 class EventListPage extends StatelessWidget {
   const EventListPage({Key? key}) : super(key: key);
 
@@ -9,12 +11,14 @@ class EventListPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10,),
+          padding: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+            top: 100,
+            bottom: 30,
+          ),
           child: Column(
             children: const [
-              SizedBox(
-                height: 100,
-              ),
               Text(
                 'TODO LIST',
                 style: TextStyle(
@@ -32,7 +36,7 @@ class EventListPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: const AddNewEventFAB(),
     );
   }
 }
-
