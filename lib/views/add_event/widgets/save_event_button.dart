@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_101_todo/controllers/appdata.dart';
 import 'package:flutter_101_todo/models/event.dart';
+import 'package:flutter_101_todo/views/homepage/event_list_page.dart';
 
 class SaveEventFAB extends StatelessWidget {
   final String eventLabel;
@@ -12,15 +13,13 @@ class SaveEventFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(eventLabel);
     return FloatingActionButton(
       backgroundColor: Colors.black,
       onPressed: () {
-        print(eventLabel);
         if(eventLabel.isNotEmpty){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (BuildContext context) => const EventListPage()));
           globalEventList.add(Event(data: eventLabel));
-          Navigator.of(context).pop();
-          print(globalEventList);
         }
       },
       child: const Icon(

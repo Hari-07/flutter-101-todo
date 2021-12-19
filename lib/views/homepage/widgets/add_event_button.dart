@@ -9,7 +9,7 @@ class AddNewEventFAB extends StatelessWidget {
     return FloatingActionButton(
       backgroundColor: Colors.black,
       onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const AddEvent()));
       },
       child: const Icon(

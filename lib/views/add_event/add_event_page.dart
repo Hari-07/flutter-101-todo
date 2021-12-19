@@ -47,7 +47,6 @@ class _AddEventState extends State<AddEvent> {
                       setState(() {
                         eventName = val;
                       });
-                      print(eventName);
                     },
                   ),
               ),
