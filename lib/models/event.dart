@@ -17,4 +17,14 @@ class Event {
   bool getCompleted() {
     return completed;
   }
+
+  factory Event.fromJson(Map<String, dynamic> json) => Event(
+        data: json['data'],
+        completed: json['completed'],
+      );
+
+  Map<String, dynamic> toJson() => {
+    'data': data,
+    'completed': completed,
+  };
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_101_todo/controllers/appdata.dart';
 
 import 'views/homepage/event_list_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppData.initEvent();
   runApp(const MyApp());
 }
 
