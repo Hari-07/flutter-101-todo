@@ -32,4 +32,9 @@ class AppData {
   static List<Event> getEvents() {
     return _eventList;
   }
+
+  static Future<void> saveEvents() async {
+    _jsonEventList = _eventList.map((event) => jsonEncode(event)).toList();
+    await _sharedPreferences.setStringList('todoList', _jsonEventList);
+  }
 }

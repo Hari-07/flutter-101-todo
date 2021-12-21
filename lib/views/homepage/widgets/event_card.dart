@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_101_todo/controllers/appdata.dart';
 import 'package:flutter_101_todo/models/event.dart';
 
 class EventCard extends StatefulWidget {
@@ -35,6 +36,7 @@ class _EventCardState extends State<EventCard> {
               setState(() {
                 widget.event.toggleCompleted();
               });
+              AppData.saveEvents();
             },
             activeColor: Colors.black,
           ),
